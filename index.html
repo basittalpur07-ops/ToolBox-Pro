@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Basics -->
+<meta name="description" content="ToolBox Pro is a free online toolkit with calculators, converters, generators, and more. No login needed!">
+<meta name="keywords" content="ToolBox Pro, online tools, calculators, converters, text tools, QR generator, password generator, free tools, Tip calculator, typing, test">
+<meta name="author" content="Muneeb Rashid">
+
+<!-- Open Graph for Social Sharing -->
+<meta property="og:title" content="ToolBox Pro - Your Ultimate Toolkit">
+<meta property="og:description" content="All-in-one free online tools. Calculators, converters, generators & more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://m-muneebweb.github.io/ToolBox-Pro/">
+<meta property="og:image" content="https://m-muneebweb.github.io/ToolBox-Pro/preview.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ToolBox Pro - Your Ultimate Toolkit">
+<meta name="twitter:description" content="All-in-one free online tools. Calculators, converters, generators & more.">
+<meta name="twitter:image" content="https://m-muneebweb.github.io/ToolBox-Pro/preview.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolBox Pro - Your Ultimate Toolkit</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3373dc">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7XXPNG85ZS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7XXPNG85ZS');
+</script>
+</head>
+
+<body>
+    <div id="welcomeBanner" class="hidden">Welcome to ToolBox Pro 👋</div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="showSection('home')">🛠️ ToolBox Pro</div>
+            <ul class="nav-links">
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('tools')">Tools</a></li>
+                <li><a onclick="showSection('about')">About Us</a></li>
+                <li><a onclick="showSection('contact')">Contact</a></li>
+                <li><a onclick="showSection('faq')">FAQ</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </nav>
+
+
+    <main>
+        <div class="container sticky-search" style="margin-top: 100px; text-align: center;">
+
+            <input type="text" id="toolSearch" placeholder="Search for a tool..."
+                style="padding: 10px; width: 80%; max-width: 400px; border-radius: 10px; border: 1px solid var(--border-color); font-size: 16px;">
+        </div>
+        <!-- Message Box -->
+        <!-- Floating Message Box -->
+        <div id="toolMessage" class="message-box hidden">To use this tool, please go to the Tools tab.</div>
+
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <h1>Welcome to ToolBox Pro</h1>
+                    <p>Your ultimate collection of useful tools, all in one place</p>
+                </div>
+
+                <div class="tools-grid" id="tools-grid">
+                    <!-- Countdown Timer Card -->
+                    <div class="tool-card" onclick="showTool('countdownTimerTool')">
+                        <span class="tool-badge">Beta</span>
+                        <h3>⏳ Countdown Timer</h3>
+                        <p>Set a future date and track the time left.</p>
+                    </div>
+
+                    <!-- Tip Calculator Card -->
+                    <div class="tool-card" onclick="showTool('tipCalculatorTool')">
+                        <span class="tool-badge">Beta</span>
+                        <h3>💰 Tip Calculator</h3>
+                        <p>Calculate tips and split the bill easily.</p>
+                    </div>
+
+                    <div class="tool-card" onclick="showTool('days-difference')">
+                        <h3>📅 Date Difference</h3>
+                        <p>Date Calculator between two difference dates.</p>
+                    </div>
+                    <div class="tool-card" onclick="showTool('age-calculator')">
+                        <h3>🎂 Age Calculator</h3>
+                        <p>Advance Age Calculator , beginner freindly.</p>
+                    </div>
+                    <div class="tool-card" onclick="showTool('alphabet-sorter')">
+                        <h3>🔠 Sort Text</h3>
+                        <p>Sort text easily</p>
+                    </div>
+                    <div class="tool-card" onclick="showTool('line-counter')">
+                        <h3>📋 Line Counter</h3>
+                        <p>Text line counter , just paste text and click on button</p>
+                    </div>
+                    <div class="tool-card" onclick="showTool('text-tools')">
+                        <h3>📝 Text Tools</h3>
+                        <p>Text manipulation, word count, case converter, and more</p>
+                    </div>
+                    <div class="tool-card" onclick="showTool('calculator')">
+                        <h3>🧮 Calculator</h3>
+                        <p>Advanced calculator with scientific functions</p>
+                    </div>
+                    <div class="tool-card" onclick="showTool('color-tools')">
+                        <span class="tool-badge">Beta</span>
+                        <h3>🎨 Color Tools</h3>
+                        <p>Color picker, palette generator, and converter</p>
+                    </div>
+                    <div class="tool-card" onclick="showTool('unit-converter')">
+                        <h3>📏 Unit Converter</h3>
+                        <p>Convert between different units of measurement</p>
+                    </div>
+                    <div class="tool-card" onclick="showTool('qr-generator')">
+                        <span class="tool-badge">Beta</span>
+                        <h3>📱 QR Code Generator</h3>
+                        <p>Generate QR codes for text, URLs, and more</p>
+                    </div>
+                    <div class="tool-card" onclick="showTool('password-generator')">
+                        <span class="tool-badge">Beta</span>
+                        <h3>🔐 Password Generator</h3>
+                        <p>Generate secure passwords with custom options</p>
+                    </div>
+                    <!-- Number to Words Converter -->
+                    <div class="tool-card" onclick="showTool('number-to-words')">
+                        <span class="tool-badge">Beta</span>
+                        <h3>🔢 Number to Words</h3>
+                        <p>Convert numbers into English words.</p>
+                    </div>
+
+                    <!-- Base64 Encoder/Decoder -->
+                    <div class="tool-card" onclick="showTool('text-encryptor')">
+                        <span class="tool-badge">Beta</span>
+                        <h3>🔒 Text Encrypt/Decrypt</h3>
+                        <p>Base64 encode or decode your text.</p>
+                    </div>
+
+                    <!-- JSON Formatter -->
+                    <div class="tool-card" onclick="showTool('json-formatter')">
+                        <h3>🗂️ JSON Formatter</h3>
+                        <p>Beautify or validate your JSON data.</p>
+                    </div>
+
+
+                    <!-- Roman Numeral Converter Card -->
+                    <div class="tool-card" onclick="showTool('roman-converter')">
+                        <h3>🔢 Roman Converter</h3>
+                        <p>Convert numbers to Roman numerals.</p>
+                    </div>
+
+                    <!-- Palindrome Checker Card -->
+                    <div class="tool-card" onclick="showTool('palindrome-checker')">
+                        <h3>🔁 Palindrome Checker</h3>
+                        <p>Check if a word or phrase is a palindrome.</p>
+                    </div>
+
+                    <!-- Typing Test Card -->
+                    <div class="tool-card" onclick="showTool('typing-test')">
+                        <h3>⌨️ Typing Speed Test</h3>
+                        <p>Test your typing speed and accuracy.</p>
+                    </div>
+                </div>
+
+
+            </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="section">
+            <div class="container">
+                <h2 class="text-center mb-2">All Tools</h2>
+
+                <!-- Tools Selection Grid -->
+
+
+                <!-- Back to Tools Button -->
+                <div class="text-center mt-2" id="backToTools" style="display: none;">
+                    <button onclick="showAllTools()"
+                        style="background: var(--primary-color); color: white; border: none; padding: 0.8rem 2rem; border-radius: 8px; cursor: pointer;">←
+                        Back to All Tools</button>
+                </div>
+
+                <!-- Text Tools -->
+                <div id="text-tools" class="tool-interface hidden">
+                    <h3>📝 Text Tools</h3>
+                    <textarea id="textInput" placeholder="Enter your text here..." rows="5"></textarea>
+                    <div>
+                        <button onclick="textToUpperCase()">UPPERCASE</button>
+                        <button onclick="textToLowerCase()">lowercase</button>
+                        <button onclick="textToTitleCase()">Title Case</button>
+                        <button onclick="countWords()">Word Count</button>
+                        <button onclick="reverseText()">Reverse Text</button>
+                        <button onclick="removeSpaces()">Remove Spaces</button>
+                    </div>
+                    <div class="result-box" id="textResult"></div>
+                </div>
+
+                <!-- Calculator -->
+                <div id="calculator" class="tool-interface hidden">
+                    <h3>🧮 Calculator</h3>
+                    <input type="text" id="calcDisplay" readonly>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 1rem;">
+                        <button onclick="clearCalc()">C</button>
+                        <button onclick="appendToCalc('/')">/</button>
+                        <button onclick="appendToCalc('*')">×</button>
+                        <button onclick="deleteLast()">⌫</button>
+                        <button onclick="appendToCalc('7')">7</button>
+                        <button onclick="appendToCalc('8')">8</button>
+                        <button onclick="appendToCalc('9')">9</button>
+                        <button onclick="appendToCalc('-')">-</button>
+                        <button onclick="appendToCalc('4')">4</button>
+                        <button onclick="appendToCalc('5')">5</button>
+                        <button onclick="appendToCalc('6')">6</button>
+                        <button onclick="appendToCalc('+')">+</button>
+                        <button onclick="appendToCalc('1')">1</button>
+                        <button onclick="appendToCalc('2')">2</button>
+                        <button onclick="appendToCalc('3')">3</button>
+                        <button onclick="calculateResult()" style="grid-row: span 2;">=</button>
+                        <button onclick="appendToCalc('0')" style="grid-column: span 2;">0</button>
+                        <button onclick="appendToCalc('.')">.</button>
+                    </div>
+                </div>
+
+                <!-- Color Tools -->
+                <div id="color-tools" class="tool-interface hidden">
+                    <h3>🎨 Color Tools</h3>
+                    <input type="color" id="colorPicker" value="#3373dc">
+                    <input type="text" id="hexInput" placeholder="#3373dc">
+                    <div>
+                        <button onclick="generateRandomColor()">Random Color</button>
+                        <button onclick="convertColor()">Convert</button>
+                        <button onclick="generatePalette()">Generate Palette</button>
+                    </div>
+                    <div class="result-box" id="colorResult"></div>
+                </div>
+
+                <!-- Unit Converter -->
+                <div id="unit-converter" class="tool-interface hidden">
+                    <h3>📏 Unit Converter</h3>
+                    <select id="unitType">
+                        <option value="length">Length</option>
+                        <option value="weight">Weight</option>
+                        <option value="temperature">Temperature</option>
+                    </select>
+                    <input type="number" id="unitInput" placeholder="Enter value">
+                    <select id="fromUnit">
+                        <option value="meter">Meter</option>
+                        <option value="kilometer">Kilometer</option>
+                        <option value="centimeter">Centimeter</option>
+                        <option value="inch">Inch</option>
+                        <option value="foot">Foot</option>
+                    </select>
+                    <span>to</span>
+                    <select id="toUnit">
+                        <option value="meter">Meter</option>
+                        <option value="kilometer">Kilometer</option>
+                        <option value="centimeter">Centimeter</option>
+                        <option value="inch">Inch</option>
+                        <option value="foot">Foot</option>
+                    </select>
+                    <button onclick="convertUnit()">Convert</button>
+                    <div class="result-box" id="unitResult"></div>
+                </div>
+
+                <!-- QR Code Generator -->
+                <div id="qr-generator" class="tool-interface hidden">
+                    <h3>📱 QR Code Generator</h3>
+                    <input type="text" id="qrText" placeholder="Enter text or URL">
+                    <button onclick="generateQR()">Generate QR Code</button>
+                    <div class="result-box" id="qrResult"></div>
+                </div>
+
+                <!-- Password Generator -->
+                <div id="password-generator" class="tool-interface hidden">
+                    <h3>🔐 Password Generator</h3>
+                    <input type="range" id="passwordLength" min="8" max="50" value="12">
+                    <span id="lengthDisplay">12</span> characters
+                    <div>
+                        <label><input type="checkbox" id="includeUppercase" checked> Uppercase</label>
+                        <label><input type="checkbox" id="includeLowercase" checked> Lowercase</label>
+                        <label><input type="checkbox" id="includeNumbers" checked> Numbers</label>
+                        <label><input type="checkbox" id="includeSymbols"> Symbols</label>
+                    </div>
+                    <button onclick="generatePassword()">Generate Password</button>
+                    <div class="result-box" id="passwordResult"></div>
+                </div>
+                <!-- New Tool Interfaces Start Here -->
+
+                <!-- Number to Words Converter -->
+                <div id="number-to-words" class="tool-interface hidden">
+                    <h2 class="tool-title">🔢 Number to Words</h2>
+                    <input type="number" id="numberInput" placeholder="Enter a number">
+                    <button onclick="convertNumberToWords()">Convert</button>
+                    <p id="numberWordsResult"></p>
+                </div>
+
+                <!-- Text Case Converter -->
+                <div id="text-case-converter" class="tool-interface hidden">
+                    <h2 class="tool-title">🔁 Text Case Converter</h2>
+                    <textarea id="caseInput" placeholder="Enter your text here"></textarea>
+                    <div class="case-buttons">
+                        <button onclick="convertCase('sentence')">Sentence Case</button>
+                        <button onclick="convertCase('capitalized')">Capitalized Case</button>
+                        <button onclick="convertCase('inverse')">Inverse Case</button>
+                    </div>
+                    <p id="caseResult"></p>
+                </div>
+
+                <!-- Text Encryptor / Decryptor -->
+                <div id="text-encryptor" class="tool-interface hidden">
+                    <h2 class="tool-title">🔒 Text Encryptor / Decryptor</h2>
+                    <textarea id="encryptInput" placeholder="Enter text"></textarea>
+                    <div class="encrypt-buttons">
+                        <button onclick="encryptText()">Encrypt</button>
+                        <button onclick="decryptText()">Decrypt</button>
+                    </div>
+                    <p id="encryptResult"></p>
+                </div>
+
+                <!-- JSON Formatter -->
+                <div id="json-formatter" class="tool-interface hidden">
+                    <h2 class="tool-title">🗂️ JSON Formatter</h2>
+                    <textarea id="jsonInput" placeholder="Paste your JSON here"></textarea>
+                    <button onclick="formatJSON()">Format</button>
+                    <pre id="jsonResult"></pre>
+                </div>
+                <div class="tool-interface hidden" id="binary-converter">
+                    <h3>💻 Binary ↔ Decimal Converter</h3>
+                    <input type="text" id="binaryInput" placeholder="Enter Number">
+                    <select id="binaryType">
+                        <option value="bin2dec">Binary to Decimal</option>
+                        <option value="dec2bin">Decimal to Binary</option>
+                    </select>
+                    <button onclick="convertBinary()">Convert</button>
+                    <div id="binaryResult" class="result-box"></div>
+                </div>
+
+
+
+                <div class="tool-interface hidden" id="age-calculator">
+                    <h3>🎂 Calculate Your Age</h3>
+                    <input type="date" id="dob">
+                    <button onclick="calculateAge()">Calculate Age</button>
+                    <div id="ageResult" class="result-box"></div>
+                </div>
+
+
+                <div class="tool-interface hidden" id="days-difference">
+                    <h3>📅 Days Between Two Dates</h3>
+                    <input type="date" id="date1">
+                    <input type="date" id="date2">
+                    <button onclick="calculateDays()">Calculate</button>
+                    <div id="daysResult" class="result-box"></div>
+                </div>
+
+                <div class="tool-interface hidden" id="alphabet-sorter">
+                    <h3>🔠 Sort Words Alphabetically</h3>
+                    <textarea id="sortInput" rows="5" placeholder="Enter words separated by commas"></textarea>
+                    <button onclick="sortAlphabetically()">Sort</button>
+                    <div id="sortResult" class="result-box"></div>
+                </div>
+
+                <div class="tool-interface hidden" id="line-counter">
+                    <h3>📋 Count Lines in Text</h3>
+                    <textarea id="lineInput" rows="8" placeholder="Paste your text here..."></textarea>
+                    <button onclick="countLines()">Count Lines</button>
+                    <div id="lineResult" class="result-box"></div>
+                </div>
+                <div class="tool-interface hidden" id="roman-converter">
+                    <h3 class="text-center mb-2">Number to Roman Numeral Converter</h3>
+                    <input type="number" id="romanInput" placeholder="Enter a number (1 - 3999)" min="1" max="3999">
+                    <button onclick="convertToRoman()">Convert</button>
+                    <div id="romanResult" class="mt-1"></div>
+                </div>
+
+                <div class="tool-interface hidden" id="palindrome-checker">
+                    <h3 class="text-center mb-2">Palindrome Checker</h3>
+                    <input type="text" id="palindromeInput" placeholder="Enter text">
+                    <button onclick="checkPalindrome()">Check</button>
+                    <div id="palindromeResult" class="mt-1"></div>
+                </div>
+
+
+                <div class="tool-interface hidden" id="typing-test">
+                    <h3 class="text-center mb-2">Typing Speed Tester</h3>
+                    <p>Start typing this ↓↓↓ sentence to check your speed.</p>
+                    <p id="typingText">Your ultimate collection of useful online tools. All tools are free to use and
+                        work directly in your browser.</p>
+                    <textarea id="typingInput" rows="4" placeholder="Start typing here..."
+                        oninput="checkTypingSpeed()"></textarea>
+                    <button onclick="restartTypingTest()"
+                        style="margin-top: 1rem; display: block; margin-left: auto; margin-right: auto;">
+                        🔁 Restart Test
+                    </button>
+
+                    <div id="typingResult" class="mt-1"></div>
+                </div>
+                <div id="countdownTimerTool" class="tool-interface hidden">
+                    <h2>⏳ Countdown Timer</h2>
+                    <p>Select a future date and time:</p>
+                    <input type="datetime-local" id="countdownInput">
+                    <button onclick="startCountdown()">Start Countdown</button>
+                    <p id="countdownOutput" style="margin-top: 1rem; font-size: 1.2rem;"></p>
+                    <button onclick="resetCountdown()">🔁 Restart</button>
+                </div>
+                <div id="tipCalculatorTool" class="tool-interface hidden">
+                    <h2>💰 Tip Calculator</h2>
+                    <input type="number" id="bill" placeholder="Bill Amount (e.g., 500)" />
+                    <input type="number" id="tip" placeholder="Tip % (e.g., 10)" />
+                    <input type="number" id="people" placeholder="No. of People (e.g., 2)" />
+                    <button onclick="calculateTip()">Calculate</button>
+                    <p id="tipResult" style="margin-top: 1rem; font-weight: bold;"></p>
+                </div>
+
+
+
+                <!-- New Tool Interfaces End Here -->
+
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-content">
+                    <h2>About ToolBox Pro</h2>
+                    <p>ToolBox Pro is your ultimate destination for useful online tools. We provide a comprehensive
+                        collection of utilities designed to make your daily tasks easier and more efficient.</p>
+                    <p>Our tools are built with modern web technologies and are completely free to use. No registration
+                        required, no ads, just pure functionality.</p>
+                    <p>Whether you need to manipulate text, perform calculations, work with colors, or generate secure
+                        passwords, we've got you covered with our intuitive and powerful tools.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="text-center mb-2">Contact Us</h2>
+
+                <!-- Contact Info Cards -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="icon">📧</div>
+                        <h3>Email</h3>
+                        <p>muneebrashidhome@gmail.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">📱</div>
+                        <h3>Phone</h3>
+                        <p>03133258330</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">📍</div>
+                        <h3>Address</h3>
+                        <p>Pakistan</p>
+                        <p>Sindh,Hyderabad,Latifabad</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">🕒</div>
+                        <h3>Business Hours</h3>
+                        <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                        <p>Sat - Sun: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 class="text-center mb-2">Send us a Message</h3>
+                    <form id="contactForm">
+                        <input type="text" id="contactName" placeholder="Your Name *" required>
+                        <input type="email" id="contactEmail" placeholder="Your Email *" required>
+                        <input type="text" id="contactSubject" placeholder="Subject *" required>
+                        <textarea id="contactMessage" placeholder="Your Message *" rows="6" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <h2 class="text-center mb-2">Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Are these tools free to use?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all our tools are completely free to use. No registration or payment required.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do you store my data?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, we don't store any of your data. All processing happens locally in your browser.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I use these tools on mobile?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all our tools are fully responsive and work great on mobile devices.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How do I report a bug or suggest a feature?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can contact us through the contact form or send us an email with your feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Add at the end of <body> -->
+    <button id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆</button>
+
+
+    <button id="suggestBtn" title="Suggest a Tool">💡 Suggest Tool</button> 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🛠️ ToolBox Pro</h3>
+                <p>Your ultimate collection of useful online tools. All tools are free to use and work directly in your
+                    browser.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                    <a href="#" title="GitHub">🐙</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" onclick="showSection('tools')">All Tools</a></li>
+                    <li><a href="#" onclick="showSection('about')">About Us</a></li>
+                    <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                    <li><a href="#" onclick="showSection('faq')">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Popular Tools</h3>
+                <ul>
+                    <li><a href="#" onclick="showTool('text-tools')">Text Tools</a></li>
+                    <li><a href="#" onclick="showTool('calculator')">Calculator</a></li>
+                    <li><a href="#" onclick="showTool('color-tools')">Color Tools</a></li>
+                    <li><a href="#" onclick="showTool('password-generator')">Password Generator</a></li>
+                    <li><a href="#" onclick="showTool('qr-generator')">QR Generator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#" onclick="showSection('faq')">Help Center</a></li>
+                    <li><a href="#" onclick="showSection('contact')">Contact Support</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Report Bug</a></li>
+                </ul>
+           </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 ToolBox Pro. All rights reserved. Made with ❤️ for the community</p>
+        </div>
+    </footer>
+    <div id="loadingOverlay" class="hidden loading-overlay">
+  <div class="dots-loader">
+    <span>.</span><span>.</span><span>.</span>
+  </div>
+</div>
+
+<button id="feedbackBtn">💬 Feedback</button>
+
+
+</body>
+
+</html>
+
+
