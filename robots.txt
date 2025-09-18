@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://m-muneebweb.github.io/ToolBox-Pro/sitemap.xml
+Sitemap: https://basittalpur07-ops.github.io/ToolBox-Pro/sitemap.xml
